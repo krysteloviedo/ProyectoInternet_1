@@ -202,6 +202,13 @@
                         </td>
                     </tr>
                     <tr>
+                        <td class="auto-style51">* Perfil</td>
+                        <td class="auto-style52">
+                            <asp:DropDownList ID="cmbPerfil" runat="server" Width="257px" AppendDataBoundItems="True" CssClass="auto-style54" Height="20px">
+                            </asp:DropDownList>
+                        </td>
+                    </tr>
+                    <tr>
                         <td class="auto-style18"></td>
                         <td class="auto-style11">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

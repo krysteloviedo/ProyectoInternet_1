@@ -20,7 +20,7 @@
         'Session("sessStrCon") = "Data Source=STATION;Initial Catalog=Restaurante;Integrated Security=True;"
         'Session("sessStrCon") = "Data Source=USER\SQLEXPRESS;Initial Catalog=Restaurante;Integrated Security=True;"
         'CADENA DE CONEXION LEONEL
-        Session("sessStrCon") = "Data Source=LAPTOP-BYRON;Initial Catalog=Restaurantes;User ID=sa;Password=sa;Integrated Security=True"
+        Session("sessStrCon") = "Data Source=localhost;Initial Catalog=Restaurantes;User ID=sa;Password=sa;Integrated Security=True"
         'Session("sessStrCon") = "Data Source=EQUIPO;Initial Catalog=Restaurantes;User ID=sa;Password=sa;Integrated Security=True"
         'Conexion Luis Delgado
         ' Session("sessStrCon") = "Data Source=PC01GYE12\SQLEXPRESS;Initial Catalog=Restaurantes;Integrated Security=True"

@@ -14,7 +14,7 @@ Partial Class menu_cliente
     Private Sub menu_cliente_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         cargarPais()
-
+        'cargarCiudad(cbo_Ciu.SelectedValue)
 
         tipoint = CInt(Request.QueryString.GetValues("v1")(0))
 
@@ -38,10 +38,10 @@ Partial Class menu_cliente
             TxtTelf.Text = dt.Rows(0)("Numero1").ToString()
             TxtFechaNac.Text = dt.Rows(0)("FechaNacimiento").ToString()
             cbo_Pais.SelectedValue = dt.Rows(0)("codPai").ToString()
-            cargarCiudad(cbo_Pais.SelectedValue)
+
             cargarCiudad1()
             cbo_Ciu.SelectedValue = dt.Rows(0)("codCiu").ToString()
-
+            cargarCiudad(cbo_Pais.SelectedValue)
         End If
 
         'If IsPostBack Then
@@ -111,6 +111,7 @@ Partial Class menu_cliente
             Return dt
         End Using
     End Function
+
     'Protected Sub Menu1_MenuItemClick(ByVal sender As Object, ByVal e As MenuEventArgs)
     'Dim hasParent As Boolean = (e.Item.Parent IsNot Nothing)
     'Select Case hasParent

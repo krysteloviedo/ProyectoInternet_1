@@ -165,7 +165,7 @@
                         <li><a href="ConsulClientes.aspx">Consultar</a></li>--%>
                         <li><a href="QuienesSomos.aspx">Quiénes somos</a></li>
                         <li><a href="Contactenos.aspx">Contáctenos</a></li>   
-                        <li><a href="RegistroClientes.aspx">Registro Clientes</a></li>                             
+                        <%--<li><a href="RegistroClientes.aspx">Registro Clientes</a></li>   --%>                          
                     </ul>
                     </nav>       
     </header>    

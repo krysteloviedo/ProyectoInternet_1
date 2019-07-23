@@ -27,6 +27,7 @@ Partial Class RegistroClientes
             cmd.Parameters.Add("@Passw", SqlDbType.VarChar, 50).Value = Me.TxtClave.Text
             cmd.Parameters.Add("@Cedula", SqlDbType.VarChar, 50).Value = Me.TxtCedula.Text
             cmd.Parameters.Add("@Ciudad", SqlDbType.Int).Value = Me.cbo_Ciu.SelectedValue
+            cmd.Parameters.Add("@id_rol", SqlDbType.Int).Value = Me.cmbPerfil.SelectedValue
 
             'parametro de regreso
             cmd.Parameters.Add("@Error", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output
@@ -83,9 +84,9 @@ Partial Class RegistroClientes
         ElseIf TxtClave.Text = "" Then
             lblMensjaes.Text = "Campo Clave Obligatorio"
             Return False
-        ElseIf cbo_Ciu.SelectedIndex = 0 Then
-            lblMensjaes.Text = "Debe seleccionar una ciudad!."
-            Return False
+            'ElseIf cbo_Ciu.SelectedIndex = 0 Then
+            '    lblMensjaes.Text = "Debe seleccionar una ciudad!."
+            '    Return False
         End If
 
         Return True
@@ -157,6 +158,30 @@ Partial Class RegistroClientes
             MsgBox("Excepción: " & ex.ToString)
         End Try
     End Sub
+    Private Sub cargarPerfil()
+        Dim intNumTotReg As Integer, i As Integer
+        Try
+            con = New SqlConnection(CStr(Session("sessStrCon")))
+            con.Open()
+            strSQL = "SELECT idRol, description"
+            strSQL = strSQL & " FROM tbm_Rol"
+            strSQL = strSQL & " ORDER BY description"
+            sda = New SqlDataAdapter(strSQL, con)
+            dtbpai = New DataTable
+            sda.Fill(dtbpai)
+            cbo_Pais.Items.Clear()
+            cbo_Pais.Items.Add(New ListItem("-", -1))
+            intNumTotReg = dtbpai.Rows.Count
+            For i = 0 To intNumTotReg - 1
+
+                cmbPerfil.Items.Add(New ListItem(dtbpai.Rows(i).Item(1), dtbpai.Rows(i).Item(0)))
+            Next
+            dtbpai.Clear()
+            con.Close()
+        Catch ex As Exception
+            MsgBox("Excepción: " & ex.ToString)
+        End Try
+    End Sub
 
     Protected Sub cbo_Pais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_Pais.SelectedIndexChanged
 
@@ -164,6 +189,12 @@ Partial Class RegistroClientes
     End Sub
 
     Protected Sub Page_PreLoad(sender As Object, e As EventArgs) Handles Me.PreLoad
+        If Not Page.IsPostBack Then
+            'cargarPais()
+            cargarPerfil()
+        End If
+    End Sub
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             cargarPais()
         End If
