@@ -4,7 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/Custom-Cs.css" rel="stylesheet" />
         <script type="text/javascript">
             function justNumbers(e) {
                 var keynum = window.event ? window.event.keyCode : e.which;
@@ -49,25 +54,22 @@
 				line-height: 25px;
 			}
 			             /*INICIO CAMBIOS REALIZADOS EN EL MENU DE NAVGACION*/
-            nav{
-            /*Bordes redondeados*/
-            /*-webkit-border-radius:10px;/*Para chrome y Safari*/
-            /*-moz-border-radius:10px;*//*Para Firefox*/
+            /*nav{
+            Bordes redondeados
+            -webkit-border-radius:10px;/*Para chrome y Safari
+            -moz-border-radius:10px;Para Firefox
             overflow:hidden;
             background-color:#000;
             width:100%;
-}
-            nav ul{
+}*/
+            /*nav ul{
             list-style:none;
             margin:0 5px 0 5px;
             padding:0;
             padding-left:70px;
-}
+}*/
             nav ul li{
-            /*Bordes redondeados*/
-            -webkit-border-radius:5px;/*Chrome y Safari*/
-            -moz-border-radius:5px;/*Firefox*/
-            -o-border-radius:5px;/*Opera*/
+            /*Bordes redondeados*/            
             border-radius:5px;/*Estandar por defecto*/
             float:left;
             font-family:Arial, Helvetica, sans-serif;
@@ -85,17 +87,13 @@
             background-image: -webkit-gradient(linear, left top, left bottom, from(#FFF), to( #E3E3E3));/*Chrome y Safari*/
             background-image: -moz-linear-gradient(top center, #FFF, #E3E3E3);/*Firefox*/
             background-image: -o-linear-gradient(top, #FFF, #E3E3E3);/*Opera*/
-            background-image: linear-gradient(top, #FFF, #E3E3E3);/*Estandar por defecto*/
-            /*Sombras*/
-            -webkit-box-shadow:  1px -1px 0px #999;/*Chrome y Safari*/
-            -moz-box-shadow:  1px -1px 0px #999;/*Firefox*/
-            -o-box-shadow:  1px -1px 0px #999;/*Opera*/
+            background-image: linear-gradient(top, #FFF, #E3E3E3);/*Estandar por defecto*/            
             box-shadow:  1px -1px 0px #999;/*Estandar por defecto*/
             border:1px solid #E3E3E3;
         }
             nav ul li a{
             color:#999;
-            display:block;
+            display:inline-block;
             padding:20px;
     
             text-decoration:none;
@@ -118,75 +116,72 @@
     <header>
         <div class="row-top">
             <div class="auto-style1" >
-                <div  style="display:inline-block;width:50%;">
+                <div  style="display:inline-block;">
                     <h1><a href="Default.aspx">RestauranTES.<span>com</span></a></h1>
-                      </div>
-                <div style="display:inline-block;width:30%;text-align:left">
-                    
+                </div>
+            </div>
+                <div >                    
                       <%Dim Usuario = CStr(Session("USER"))
-                          If Not String.IsNullOrEmpty(Usuario) Then
+                If Not String.IsNullOrEmpty(Usuario) Then
                             %>  
                     <ul>                      
-                        <li><a href="InicioSesion.aspx"><img style="width:140px;height:35px;padding-top:50px;margin-left:375px;border:none;" src="images/Transicion/cerrar_sesion.png" /></a></>  </li>    
+                        <li><a href="InicioSesion.aspx"><img  src="images/cerrar_sesion.png" /></a></>  </li>    
                        <%
-                           If Session("tipoEmpleado").Equals("Administrador") Then
+                If Session("tipoEmpleado").Equals("Administrador") Then
                             %>  
-                         <li><a href="MenuAdministrador.aspx"><img style="width:90px;float:right;margin-top:-120px;height:90px;padding-top:50px;margin-right:-15px;border:none;" src="images/Administrador.png" /></a></li>
+                         <%--<li><a href="MenuAdministrador.aspx"><img style="width:90px;float:right;margin-top:-120px;height:90px;padding-top:50px;margin-right:-15px;border:none;" src="images/Administrador.png" /></a></li>--%>
                           <%End If%>
                          <%
-                             If Session("tipoEmpleado").Equals("Mesero") Then
+                If Session("tipoEmpleado").Equals("Mesero") Then
                             %>  
                          <li><a href="MenuMesero.aspx"><img style="width:90px;float:right;margin-top:-120px;height:90px;padding-top:50px;margin-right:-15px;border:none;" src="images/Mesero.png" /></a></li>
                           <%End If%>
                          <%
-                             If Session("tipoEmpleado").Equals("Chef") Then
+                If Session("tipoEmpleado").Equals("Chef") Then
                             %>  
                          <li><a href="MenuCocina.aspx"><img style="width:90px;float:right;margin-top:-120px;height:90px;padding-top:50px;margin-right:-15px;border:none;" src="images/chef.png" /></a></li>
                           <%End If%>
                     </ul>
                          <%Else%>
                     
-                         '<a href="InicioSesion.aspx"><img style="width:150px;height:70px;padding-top:-150px;margin-left:350px" src="images/Transicion/inicio_sesion.png" /></a></> 
-                       
+                        <a href="InicioSesion.aspx"><img  src="images/Transicion/inicio_sesion.png" /></a></> 
+                      
                    
                      <%End If%>  
                    
-                      </div>
-            </div>
-             </div>
+                      </div>            
+
+                 <!-- Navbar -->
+            <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
                     <nav>
                     <ul>
                         <li><a title="Inicio" href="Default.aspx">Inicio</a></li>
-                        <li><a title="Menú" href="MenuAdministrador.aspx">Menú</a></li>
-                    <%--    <li><a title="ActulizarPlatos" href="ActulizarPlatos.aspx">Actualizar Platos</a></li>--%>
+                        <li><a title="Menú" href="MenuAdministrador.aspx">Menú</a></li>                    
                         <li><a href="Reservaciones.aspx">Reservas</a></li>
-                        <%--<li><a href="Pedidos.aspx">Pedidos domicilio</a></li>--%>
-                  <%--      <li><a href="PagEstadoPed.aspx">Estado pedido</a></li>
-                        <li><a href="ConsulClientes.aspx">Consultar</a></li>--%>
                         <li><a href="QuienesSomos.aspx">Quiénes somos</a></li>
-                        <li><a href="Contactenos.aspx">Contáctenos</a></li>   
-                        <%--<li><a href="RegistroClientes.aspx">Registro Clientes</a></li>   --%>                          
+                        <li><a href="Contactenos.aspx">Contáctenos</a></li>                                                      
                     </ul>
-                    </nav>       
+                    </nav>   
+                                
+                </div>
+            </div>
+            <!-- Navbar End -->
+
+
+
+             </div>
+                          
     </header>    
      <%--     /INICIO CAMBIOS REALIZADOS EN EL MENU DE NAVGACION*/--%>
     <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-            <div class="row-bot">
-                <div class="row-bot-bg">
-                    <div class="main">
-                        <h2></h2> 
-                    </div>
-                </div>
-            </div>
-            <section id="content">              
-            </section>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">           
         </asp:ContentPlaceHolder>
     </div>
 
     <!--==============================footer=================================-->
     <footer>
-        <div class="main">
+        <div class="container">
             <div class="aligncenter">
                 <b>Internet I</b><br/>
                 <b>© Todos los derechos reservados 2017</b><br />

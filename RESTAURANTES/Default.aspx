@@ -25,7 +25,26 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div>    
+    <!--- Middle Contents -->
+        <div class="container center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>&nbsp;<strong>Somos tu mejor eleccion</strong></h2>                    
+                    <div class="slider" >
+                            <ul class="items">
+                                <li><img src="images/Slider/01.jpg" alt="" style="width:50%; height:50%;" /></li>
+                                <li><img src="images/Slider/02.jpg" alt="" style="width:50%; height:50%;" /></li>
+                                <li><img src="images/Slider/03.jpg" alt="" style="width:50%; height:50%;" /></li>
+                                <li><img src="images/Slider/04.jpg" alt="" style="width:50%; height:50%;" /></li>
+                                <li><img src="images/Slider/05.jpg" alt="" style="width:50%; height:50%;" /></li>
+                                <li><img src="images/Slider/06.jpg" alt="" style="width:50%; height:50%;" /></li>
+                            </ul>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <!--- Middle Contents -->
+    <%--<div>    
         <div class="row-bot">
             <div class="row-bot-bg">
                 <div class="main">
@@ -60,7 +79,7 @@
                 </div>
             </div>
         </section>
-    </div>
+    </div>--%>
 
 
     <script type="text/javascript"> Cufon.now(); </script>
