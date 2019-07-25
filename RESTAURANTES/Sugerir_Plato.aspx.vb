@@ -19,7 +19,7 @@ Partial Class Contactenos
             con = New SqlConnection(CStr(Session("sessStrCon")))
             con.Open()
             strSQL = ""
-            strSQL = "SELECT MAX(ISNULL(Codigo_Plato,0)) + 1 FROM tbm_sugerirplato"
+            strSQL = "SELECT MAX(ISNULL(Codigo,0)) + 1 FROM tbm_sugerirplato"
             sda = New SqlDataAdapter(strSQL, con)
             dtbins = New DataTable
             sda.Fill(dtbins)
@@ -31,8 +31,15 @@ Partial Class Contactenos
             dtbins.Clear()
 
             If InsertarRegistro() Then
+                Dim mensaje As String = "Su plato fue sugerido exitosamente."
+                Dim Script As String = String.Format("alert('{0}');", mensaje)
+                Me.Page.ClientScript.RegisterClientScriptBlock(Me.Page.GetType(), "alert", Script, True)
+                limpiar()
                 'MsgBox("Rergistrado Con éxito!!!")
             Else
+                Dim mensaje As String = "Su plato no fue sugerido!!!!!"
+                Dim Script As String = String.Format("alert('{0}');", mensaje)
+                Me.Page.ClientScript.RegisterClientScriptBlock(Me.Page.GetType(), "alert", Script, True)
                 'MsgBox("No se ha podido guardar el Registro\nCorrigalo y vuelva a intentar!!")
             End If
 
@@ -43,7 +50,10 @@ Partial Class Contactenos
         End Try
 
     End Sub
-
+    Private Sub limpiar()
+        TxtObs.Text = String.Empty
+        TxNombre.Text = String.Empty
+    End Sub
     Private Function InsertarRegistro() As Boolean
         Dim intNumFilIns As Integer = 0
         Dim ok As Boolean = False
@@ -53,9 +63,9 @@ Partial Class Contactenos
         Dim fecha As String = Trim(dia.ToString()) & "/" & Trim(mes.ToString()) & "/" & Trim(anio.ToString())
         Try
             strSQL = ""
-            strSQL = "INSERT INTO tbm_sugerirplato(Codigo_Plato, Nombre,  Observaciones, Fecha, Estado, IdPersona, CI)" &
+            strSQL = "INSERT INTO tbm_sugerirplato(Codigo, Nombre,  Observaciones, Fecha, Estado, CI)" &
             " VALUES(" & intCodPer & ", '" & TxNombre.Text & "' ,'" & TxtObs.Text & "', '" & DateTime.Now.ToString("yyyy-MM-dd") &
-            "', 'P'," & 0 & "," & 0 & ")"
+            "', 'P'," & 0 & ")"
             Dim InsertCommand As New SqlCommand(strSQL, con)
             intNumFilIns = InsertCommand.ExecuteNonQuery()
 

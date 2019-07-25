@@ -25,11 +25,12 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!--- Middle Contents -->
         <div class="container center">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>&nbsp;<strong>Somos tu mejor eleccion</strong></h2>                    
+                    <h2>&nbsp;<strong>Somos tu mejor alternativa</strong></h2>                    
                     <div class="slider" >
                             <ul class="items">
                                 <li><img src="images/Slider/01.jpg" alt="" style="width:50%; height:50%;" /></li>

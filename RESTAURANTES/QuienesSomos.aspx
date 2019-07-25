@@ -52,7 +52,7 @@
     <div class="auto-style8">
         	<div class="auto-style7">
             	<div class="main">
-                	<h2>Somos <span>su mejor opción.</span></h2>
+                	<h2><span>Somos tu mejor alternativa</span></h2>
                 </div>
             </div>
         </div>

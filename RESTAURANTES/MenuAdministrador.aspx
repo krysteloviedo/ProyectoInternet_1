@@ -54,13 +54,13 @@
                   </strong>
             <%--     /FIN CAMBIOS REALIZADOS EN EL MENU DE ADMINISTRADOR*/--%>
 
-                <div class="text-left">
+                <%--<div class="text-left">
                     <asp:Button ID="Button1" runat="server" PostBackUrl="~/Perfiles.aspx" Text="Perfiles" />
                     <br />
                     <br />
                     <br />
                     <br />
-                </div>  
+                </div> --%> 
                 <br /> 
                 <br />
                     <br />
