@@ -37,7 +37,18 @@ Partial Class Contactenos
 
         sda.InsertCommand = New SqlCommand(strSQL, con)
         intNumFilIns = sda.InsertCommand.ExecuteNonQuery()
+        If intNumFilIns > 0 Then
+            Dim mensaje As String = "Su comentario fue enviado exitosamente."
+            Dim Script As String = String.Format("alert('{0}');", mensaje)
+            Me.Page.ClientScript.RegisterClientScriptBlock(Me.Page.GetType(), "alert", Script, True)
+            limpiar()
+        End If
 
+    End Sub
+    Private Sub limpiar()
+        Me.TextBox1.Text = String.Empty
+        Me.TextBox2.Text = String.Empty
+        Me.TextBox3.Text = String.Empty
     End Sub
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
 

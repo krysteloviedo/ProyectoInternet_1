@@ -19,7 +19,6 @@ Partial Class _Default
 
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-
         If Not Page.IsPostBack Then
             If Session("sesUsrIniSes") <> "S" Then
                 Response.Redirect("InicioSesion.aspx")
@@ -218,7 +217,7 @@ Partial Class _Default
             Dim dtbinsb As DataTable
             dtbinsb = New DataTable
             For i = 0 To dtborden.Rows.Count - 1
-                
+
                 Dim n As DateTime = Now
                 Dim strsqlb As String
                 strsqlb = "SELECT Tiempo FROM tbm_Platos where idplato= " & dtborden.Rows(i).Item(0)
@@ -249,8 +248,18 @@ Partial Class _Default
 
         End Try
 
-        Response.Redirect("Reservaciones.aspx?v1=" & tx_CodighoMesero.Text)
+        If intNumFilIns > 0 Then
+            Dim message As String = "Su reservación fue generada exitosamente."
+            Dim url As String = "/Reservaciones.aspx?v1=" & tx_CodighoMesero.Text
+            Dim Script As String = "{ alert('"
+            Script += message
+            Script += "');"
+            Script += "window.location = '"
+            Script += url
+            Script += "'; }"
+            ScriptManager.RegisterStartupScript(Me.Page, Page.GetType(), "alert", Script, True)
+        End If
 
-
+        'Response.Redirect("Reservaciones.aspx?v1=" & tx_CodighoMesero.Text)
     End Sub
 End Class
