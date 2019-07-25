@@ -157,7 +157,7 @@
                     <nav>
                     <ul>
                         <li><a title="Inicio" href="Default.aspx">Inicio</a></li>
-                        <li><a title="Menú" href="MenuAdministrador.aspx">Menú</a></li>                    
+                        <li><a title="Menú" href="MenuAdministrador.aspx">Opciones</a></li>                    
                         <li><a href="Reservaciones.aspx">Reservas</a></li>
                         <li><a href="QuienesSomos.aspx">Quiénes somos</a></li>
                         <li><a href="Contactenos.aspx">Contáctenos</a></li>                                                      
@@ -184,7 +184,7 @@
         <div class="container">
             <div class="aligncenter">
                 <b>Internet I</b><br/>
-                <b>© Todos los derechos reservados 2017</b><br />
+                <b>© Todos los derechos reservados 2019</b><br />
                 <img src="images/Transicion/facebook_16423.png" style="width:60px;height:60px" />
                 <img src="images/Transicion/1b2ca367caa7eff8b45c09ec09b44c16-instagram-icon-logo.png" style="width:60px;height:60px" />
                 <img src="images/Transicion/twitter-icon.png" style="width:60px;height:60px" />
