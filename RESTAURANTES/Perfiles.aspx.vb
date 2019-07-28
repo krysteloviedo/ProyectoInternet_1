@@ -13,6 +13,7 @@ Partial Class _Default
     Public strSQL2 As String
     Public strSQL3 As String
     Public Usuario As String
+    Public sds As String
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
 
