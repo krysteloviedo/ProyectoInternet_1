@@ -34,42 +34,74 @@
         </div>
         <section id="content"><div class="ic"></div>
         <div class="main">
-            <div class="auto-style10">
-          
-
-                <div class="text-left">
-               
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Permiso" DataValueField="Permiso">
-                    </asp:DropDownList>
-                    <asp:Button ID="Button2" runat="server" Text="Button" />
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [Permiso] FROM [Table]"></asp:SqlDataSource>
-                    <br />
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataSourceID="SqlDataSource2" ForeColor="Black" Width="410px">
-                        <Columns>
-                            <asp:BoundField DataField="Permiso" HeaderText="Permiso" SortExpression="Permiso" />
-                            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
-                            <asp:ButtonField ButtonType="Button" HeaderText="Pagina" Text="Ir" />
-                        </Columns>
-                        <FooterStyle BackColor="#CCCCCC" />
-                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
-                        <RowStyle BackColor="White" />
-                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                        <SortedAscendingHeaderStyle BackColor="#808080" />
-                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                        <SortedDescendingHeaderStyle BackColor="#383838" />
-                    </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Table] WHERE ([Permiso] = @Permiso)">
-                        <SelectParameters>
-                            <asp:ControlParameter ControlID="DropDownList1" Name="Permiso" PropertyName="SelectedValue" Type="String" />
-                        </SelectParameters>
-                    </asp:SqlDataSource>
-                    <br />
-                    <asp:Button ID="Button1" runat="server" Height="25px" PostBackUrl="~/Administrar_PERMISO.aspx" Text="Administar permisos" />
-               
+            <div>          
+                <div>               
+                    <asp:DropDownList ID="cboRol" runat="server" AutoPostBack="true" OnSelectedIndexChanged="cboRol_SelectedIndexChanged"></asp:DropDownList>
                 </div>  
-                        
+                <div>  
+      
+        <asp:GridView ID="gridPerfiles" runat="server" AutoGenerateColumns="False"   
+            BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px"   
+            CellPadding="4" ForeColor="Black" GridLines="Vertical">  
+            <AlternatingRowStyle BackColor="White" />  
+            <Columns>  
+                <asp:TemplateField HeaderText="MenuId">  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("MenuId") %>'></asp:TextBox>  
+                    </EditItemTemplate>  
+                    <ItemTemplate>  
+                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("MenuId") %>'></asp:Label>  
+                    </ItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="Rol">  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Rol") %>'></asp:TextBox>  
+                    </EditItemTemplate>  
+                    <ItemTemplate>  
+                        <asp:Label ID="Label4" runat="server" Text='<%# Bind("Rol") %>'></asp:Label>  
+                    </ItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="Nombre">  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Titulo") %>'></asp:TextBox>  
+                    </EditItemTemplate>  
+                    <ItemTemplate>  
+                        <asp:Label ID="Label2" runat="server" Text='<%# Bind("Titulo") %>'></asp:Label>  
+                    </ItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="Página">  
+                    <EditItemTemplate>  
+                        <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Pagina") %>'></asp:TextBox>  
+                    </EditItemTemplate>  
+                    <ItemTemplate>  
+                        <asp:Label ID="Label3" runat="server" Text='<%# Bind("Pagina") %>'></asp:Label>  
+                    </ItemTemplate>  
+                </asp:TemplateField>  
+                <asp:TemplateField HeaderText="Permiso">  
+                    <EditItemTemplate>  
+                        <asp:CheckBox ID="chkPermiso" runat="server" />  
+                    </EditItemTemplate>  
+                    <ItemTemplate>  
+                        <asp:CheckBox ID="chkPermiso" runat="server" />  
+                    </ItemTemplate>  
+                </asp:TemplateField>  
+            </Columns>  
+            <FooterStyle BackColor="#CCCC99" />  
+            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />  
+            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />  
+            <RowStyle BackColor="#F7F7DE" />  
+            <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />  
+            <SortedAscendingCellStyle BackColor="#FBFBF2" />  
+            <SortedAscendingHeaderStyle BackColor="#848384" />  
+            <SortedDescendingCellStyle BackColor="#EAEAD3" />  
+            <SortedDescendingHeaderStyle BackColor="#575357" />  
+        </asp:GridView>  
+      
+        <br />  
+      
+    </div>         
+                    <asp:Button ID="btnEstablecer" runat="server"    
+        Text="Establecer permisos" />  
             </div>
         </div>   
         </section>
