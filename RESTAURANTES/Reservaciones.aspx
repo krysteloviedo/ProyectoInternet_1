@@ -286,7 +286,7 @@
                                     <asp:Button ID="btnEnvio" runat="server" Text="Enviar Pedido" Width="119px" Height="28px" />
 
                                     <ajaxToolkit:ConfirmButtonExtender ID="btnEnvio_ConfirmButtonExtender" runat="server" ConfirmText="¿Esta seguro de querer enviar su pedido?" OnClientCancel="Operación cancelada" TargetControlID="btnEnvio" />
-
+                                    <asp:Button ID="btnConsultaPedidos" runat="server" Text="Consulta pedidos" Width="119px" Height="28px" />
                         </td>
                     </tr>
                 </table>

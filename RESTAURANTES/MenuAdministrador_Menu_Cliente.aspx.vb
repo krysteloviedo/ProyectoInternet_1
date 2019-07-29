@@ -1,7 +1,7 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 Imports System.IO
-Imports DevExpress.Web
+'Imports DevExpress.Web
 
 Partial Class MenuAdministrador_Menu_Cliente
     Inherits System.Web.UI.Page

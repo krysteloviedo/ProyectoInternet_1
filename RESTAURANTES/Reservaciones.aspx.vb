@@ -262,4 +262,8 @@ Partial Class _Default
 
         'Response.Redirect("Reservaciones.aspx?v1=" & tx_CodighoMesero.Text)
     End Sub
+    Protected Sub btnConsultaPedidos_Click(sender As Object, e As EventArgs) Handles btnConsultaPedidos.Click
+        'Response.Redirect("muestraPedidos.aspx")
+        Response.Redirect("pedidosCabecera.aspx")
+    End Sub
 End Class

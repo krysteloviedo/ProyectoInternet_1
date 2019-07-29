@@ -151,7 +151,7 @@ Partial Class _Default
         Catch ex As Exception
 
         Finally
-
+            con.Close()
         End Try
 
     End Sub
