@@ -18,7 +18,7 @@ Partial Class Contactenos
             Dim cont As Integer
             con = New SqlConnection(CStr(Session("sessStrCon")))
             con.Open()
-            strSQL = "select 'False', Codigo_Plato as [Codigo],[Nombre],[Estado],[Fecha], Sum([CI]) as CI from [tbm_sugerirplato] where Estado='V' GROUP BY Codigo_Plato, Nombre, Estado, Fecha order by CI desc"
+            strSQL = "select 'False', Codigo as [Codigo],[Nombre],[Estado],[Fecha], Sum([CI]) as CI from [tbm_sugerirplato] where Estado='V' GROUP BY Codigo, Nombre, Estado, Fecha order by CI desc"
             sda = New SqlDataAdapter(strSQL, con)
             dt = New DataTable()
             dt.Columns.Add("Check", Type.GetType("System.Boolean"))
@@ -53,7 +53,7 @@ Partial Class Contactenos
                 strSQL = strSQL & " VALUES(" & maximo & ",'" & nombre & "','" & "A" & "','" & DateTime.Now.Date.ToString("yyyy-MM-dd") & "','" & "Plato Sugerido" & "'," & "3" & ")"
                 Dim insertar As New SqlCommand(strSQL, con)
                 count = insertar.ExecuteNonQuery()
-                strSQL3 = "UPDATE [tbm_sugerirplato] set Estado = 'A' where Codigo_Plato = " & codigo
+                strSQL3 = "UPDATE [tbm_sugerirplato] set Estado = 'A' where Codigo = " & codigo
                 Dim actu As New SqlCommand(strSQL3, con)
                 count = actu.ExecuteNonQuery()
                 con.Close()
@@ -69,7 +69,7 @@ Partial Class Contactenos
         Dim cont As Integer
         con = New SqlConnection(CStr(Session("sessStrCon")))
         con.Open()
-        strSQL = "select 'False', Codigo_Plato as [Codigo],[Nombre],[Estado],[Fecha], Sum([CI]) as CI from [tbm_sugerirplato] where Estado='V' GROUP BY Codigo_Plato, Nombre, Estado, Fecha order by CI desc"
+        strSQL = "select 'False', Codigo as [Codigo],[Nombre],[Estado],[Fecha], Sum([CI]) as CI from [tbm_sugerirplato] where Estado='V' GROUP BY Codigo, Nombre, Estado, Fecha order by CI desc"
         sda = New SqlDataAdapter(strSQL, con)
         dt = New DataTable()
         dt.Columns.Add("Check", Type.GetType("System.Boolean"))

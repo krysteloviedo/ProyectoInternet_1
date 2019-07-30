@@ -191,7 +191,7 @@
                             <%-- ConfirmButtonExtender Luis Delgado/Jaritza Orrala --%>
                             <asp:ScriptManager ID="ScriptManager1" runat="server">
                             </asp:ScriptManager>
-                            <asp:Button ID="Button1" runat="server" Text="PUBLICAR PLATOS" CssClass="auto-style22" />
+                            <asp:Button ID="Button1" runat="server" Text="PUBLICAR PLATOS" CssClass="auto-style22" Visible="False" />
                             <ajaxToolkit:ConfirmButtonExtender ID="Button1_ConfirmButtonExtender" runat="server" ConfirmText="¿Esta seguro de publicar los platos registrados?" OnClientCancel="Operación cancelada" TargetControlID="Button1" />
                         </td>
                         <td class="auto-style11">
