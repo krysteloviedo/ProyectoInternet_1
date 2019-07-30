@@ -30,7 +30,7 @@ Partial Class reportePlatosCategoria
         con.Close()
         If dt.Rows.Count > 0 Then
             For i = 0 To dt.Rows.Count - 1
-                cboCategoria.Items.Add(New ListItem(dt.Rows(i).Item(0), dt.Rows(i).Item(0)))
+                cboCategoria.Items.Add(New ListItem(dt.Rows(i).Item(1), dt.Rows(i).Item(0)))
             Next
         End If
     End Sub
