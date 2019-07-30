@@ -10,6 +10,7 @@ Partial Class MasterPage
     Public dtbA, dtbB As DataTable
     Public strSQL As String
     Public Usuario As String
+    Public Usuario2 As String
 
     Sub MySub()
 
