@@ -16,7 +16,7 @@ Partial Class _Default
     Public sds As String
     Public pruebas As String
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-
+        Dim pruebas As String
         If Not Me.IsPostBack Then
             CargaRoles()
             CargaDatos()
@@ -28,6 +28,7 @@ Partial Class _Default
     End Sub
     Private Sub CargaRoles()
         Try
+            Dim pruebas As String
             con = New SqlConnection(CStr(Session("sessStrCon")))
             con.Open()
             strSQL = "select idRol, description from tbm_Rol"
@@ -48,6 +49,7 @@ Partial Class _Default
     End Sub
     Private Sub CargaDatos()
         Try
+            Dim pruebas As String
             con = New SqlConnection(CStr(Session("sessStrCon")))
             con.Open()
             strSQL = "select MenuId, case when Id_rol = 1 then 'Administrador' when Id_rol = 2 then 'Chef' when Id_rol = 3 then 'Mesero' else 'Cliente' end as Rol, Titulo, Pagina from tbm_Menus where Titulo not in ('Ingresar', 'Modificar', 'Eliminar', 'Consultas')"
@@ -66,6 +68,7 @@ Partial Class _Default
     End Sub
     Private Sub establecePermisos(valor As String)
         Try
+            Dim pruebas As String
             con = New SqlConnection(CStr(Session("sessStrCon")))
             con.Open()
             For Each gvrow As GridViewRow In gridPerfiles.Rows
@@ -91,6 +94,7 @@ Partial Class _Default
 
     End Sub
     Protected Sub cboRol_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboRol.SelectedIndexChanged
+        Dim pruebas As String
         Dim valor As String = cboRol.SelectedValue
         If Not String.IsNullOrEmpty(valor) Then
             establecePermisos(valor)
