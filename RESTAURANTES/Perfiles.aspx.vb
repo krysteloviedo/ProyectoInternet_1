@@ -14,7 +14,7 @@ Partial Class _Default
     Public strSQL3 As String
     Public Usuario As String
     Public sds As String
-
+    Public pruebas As String
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         If Not Me.IsPostBack Then
