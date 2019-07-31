@@ -247,7 +247,9 @@ Partial Class _Default
             Next
             con.Close()
 
-            MsgBox("Datos guardados con éxito.")
+            Dim mensaje As String = "Datos guardados con éxito."
+            Dim Script As String = String.Format("alert('{0}');", mensaje)
+            Me.Page.ClientScript.RegisterClientScriptBlock(Me.Page.GetType(), "alert", Script, True)
 
         Catch ex As Exception
             MsgBox(ex.ToString)

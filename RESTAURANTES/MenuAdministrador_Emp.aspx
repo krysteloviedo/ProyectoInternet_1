@@ -422,7 +422,7 @@
                                 <td class="auto-style24">&nbsp;</td>
                                 <td class="auto-style27" colspan="3">
                                     <%-- ConfirmButtonExtender Luis Delgado/Jaritza Orrala --%>
-                                    <asp:Button ID="Button1" runat="server" Text="Guardar" Width="130px" />
+                                    <asp:Button ID="Button1" runat="server" Text="Guardar" Width="130px" OnClick="Button1_Click"/>
                                     <ajaxToolkit:ConfirmButtonExtender ID="Button1_ConfirmButtonExtender" runat="server" ConfirmText="¿Esta seguro de guardar su información?" OnClientCancel="Operación cancelada" TargetControlID="Button1" />
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <a href="MenuAdministrador.aspx"><b>REGRESAR</b></a>

@@ -186,8 +186,8 @@ Partial Class _Default
         dtbins.Clear()
 
         If tipoint = 0 Then
-            If x = 0 Then
-                Try
+            'If x = 0 Then
+            Try
                     con = New SqlConnection(CStr(Session("sessStrCon")))
                     con.Open()
                     strSQL = "SELECT MAX(IdPersona) FROM tbm_Personas"
@@ -246,16 +246,19 @@ Partial Class _Default
                     sda.InsertCommand = New SqlCommand(strSQL, con)
                     intNumFilIns = sda.InsertCommand.ExecuteNonQuery()
                     con.Close()
-                    MsgBox("Datos guardados con éxito.")
-
+                    Dim mensaje As String = "Datos guardados con éxito."
+                    Dim Script As String = String.Format("alert('{0}');", mensaje)
+                    Me.Page.ClientScript.RegisterClientScriptBlock(Me.Page.GetType(), "alert", Script, True)
+                    Response.Redirect("MenuAdministrador.aspx")
+                    strSQL = ""
+                    dtbins.Clear()
                 Catch ex As Exception
-                    MsgBox(ex.ToString)
+                    Dim mensaje As String = ex.ToString
+                    Dim Script As String = String.Format("alert('{0}');", mensaje)
+                    Me.Page.ClientScript.RegisterClientScriptBlock(Me.Page.GetType(), "alert", Script, True)
                 End Try
-                Response.Redirect("MenuAdministrador.aspx")
-                strSQL = ""
-                dtbins.Clear()
-            End If
-            If x = 1 Then
+                'End If
+                If x = 1 Then
 
             End If
             If x = 2 Then

@@ -141,8 +141,10 @@ Partial Class _Default
                 '   Server.MapPath("Images/menu/CATEGORIAS/" & cbo_Categoria.SelectedItem.ToString & "/" & tx_Nom.Text) & "/01.jpg")
                 'transicion = Server.MapPath("Images/Transicion/") + CStr(Session("LOGIN")) + "\"
                 'My.Computer.FileSystem.CopyDirectory(transicion, Server.MapPath("Images/menu/CATEGORIAS/" & cbo_Categoria.SelectedItem.ToString & "/" & tx_Nom.Text & "/"))
-                'My.Computer.FileSystem.DeleteDirectory(transicion, FileIO.DeleteDirectoryOption.DeleteAllContents)
-                MsgBox("Datos guardados con éxito.")
+                'My.Computer.FileSystem.DeleteDirectory(transicion, FileIO.DeleteDirectoryOption.DeleteAllContents)                
+                Dim mensaje As String = "Datos guardados con éxito."
+                Dim Script As String = String.Format("alert('{0}');", mensaje)
+                Me.Page.ClientScript.RegisterClientScriptBlock(Me.Page.GetType(), "alert", Script, True)
             Catch ex As Exception
                 MsgBox(ex.ToString)
             End Try
@@ -170,8 +172,9 @@ Partial Class _Default
                 cmd.ExecuteNonQuery()
 
                 con.Close()
-
-                MsgBox("Datos modificados con éxito.")
+                Dim mensaje As String = "Datos modificados con éxito."
+                Dim Script As String = String.Format("alert('{0}');", mensaje)
+                Me.Page.ClientScript.RegisterClientScriptBlock(Me.Page.GetType(), "alert", Script, True)
 
             Catch ex As Exception
                 MsgBox(ex.ToString)
@@ -188,12 +191,14 @@ Partial Class _Default
 
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.AddWithValue("@IdPlato", CInt(cbo_Nombre_Plato.SelectedValue))
-                MsgBox(cbo_Nombre_Plato.SelectedValue)
+                'MsgBox(cbo_Nombre_Plato.SelectedValue)
                 cmd.ExecuteNonQuery()
 
                 con.Close()
 
-                MsgBox("Datos Eliminados con éxito.")
+                Dim mensaje As String = "Datos Eliminados con éxito."
+                Dim Script As String = String.Format("alert('{0}');", mensaje)
+                Me.Page.ClientScript.RegisterClientScriptBlock(Me.Page.GetType(), "alert", Script, True)
 
             Catch ex As Exception
                 MsgBox(ex.ToString)

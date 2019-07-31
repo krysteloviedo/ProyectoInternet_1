@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="MasterPage.master" AutoEventWireup="false" CodeFile="QuienesSomos.aspx.vb" Inherits="QuienesSomos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="css/layout.css" type="text/css" media="screen"/> 
@@ -49,6 +50,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
     <div class="auto-style8">
         	<div class="auto-style7">
             	<div class="main">
@@ -56,19 +58,17 @@
                 </div>
             </div>
         </div>
+    <div>
 
-
-    <section style="width:100%;padding:40px 70px 70px 70px;text-align:justify;line-height:25px;background-color:white">
+    <%--<div class="w3-container">--%>
+    <section style="width:100%;padding:40px 90px 90px 90px;text-align:justify;line-height:25px;background-color:white">
         <p class="auto-style6">	RESTAURANTES Restaurante, un paraíso de delicias gastronómicas creado para satisfacer su exigente paladar, nace en el año 2014.
-
 Fuimos guiados por el deseo de recuperar nuestra herencia ancestral, de utilizar el horno de barro como principal elemento de cocción, con técnicas de quemado y chamuscado como toque enriquecedor de los manjares que preparamos para su degustación. De allí, nos inspiramos para lograr un entorno armonioso entre lo rústico y lo acogedor.
-
-<br /> <br />Nuestra promesa de servicio,  es ofrecerle las mejores opciones gastronómicas sobre la base de la cocina esencial, acompañadas de un ambiente agradable, que evoque el calor y la comodidad de su hogar y le permita la oportunidad de compartir experiencias únicas: agasajar a sus seres queridos, conquistar al amor de su vida, brindar una atención especial a alguien igualmente especial, concretar un negocio, mantener una cálida conversación con amigos… en fin vivencias hermosas que quedarán grabadas como el mejor recuerdo de su visita, en cada rincón de nuestro local.
-
-<br /><br /> Quienes hacemos RESTAURANTES, somos un grupo de profesionales con una amplia trayectoria en el campo gastronómico. Utilizamos los mejores ingredientes, siempre frescos y de la mayor calidad, lo cual acompañado de la experiencia de nuestro chef, nos posibilita ofrecerle diferentes términos para su elección, según sea el gusto de su paladar.
-
-Finalmente, el toque mágico de RESTAURANTES lo pone usted. Siempre es un placer contar con su presencia como un invitado de honor, y nos encanta que nos permita formar parte de sus vivencias personales. Es nuestro deseo contar con su preferencia y elección.</p><br /><br />
-    <div style="background-color:white;padding-top:40px"><img src="images/Restaurantes.png" style="width:87%;height:300px;padding-left:10px" /><table class="w-100">
+Nuestra promesa de servicio,  es ofrecerle las mejores opciones gastronómicas sobre la base de la cocina esencial, acompañadas de un ambiente agradable, que evoque el calor y la comodidad de su hogar y le permita la oportunidad de compartir experiencias únicas: agasajar a sus seres queridos, conquistar al amor de su vida, brindar una atención especial a alguien igualmente especial, concretar un negocio, mantener una cálida conversación con amigos… en fin vivencias hermosas que quedarán grabadas como el mejor recuerdo de su visita, en cada rincón de nuestro local.
+Quienes hacemos RESTAURANTES, somos un grupo de profesionales con una amplia trayectoria en el campo gastronómico. Utilizamos los mejores ingredientes, siempre frescos y de la mayor calidad, lo cual acompañado de la experiencia de nuestro chef, nos posibilita ofrecerle diferentes términos para su elección, según sea el gusto de su paladar.
+Finalmente, el toque mágico de RESTAURANTES lo pone usted. Siempre es un placer contar con su presencia como un invitado de honor, y nos encanta que nos permita formar parte de sus vivencias personales. Es nuestro deseo contar con su preferencia y elección.</p>
+   <%--</div>--%>
+         <div style="background-color:white;padding-top:40px"><img src="images/Restaurantes.png" style="width:87%;height:300px;padding-left:10px" /><table class="w-100">
         <tr>
             <td>
                 <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -97,7 +97,7 @@ Finalmente, el toque mágico de RESTAURANTES lo pone usted. Siempre es un placer
             </ajaxToolkit:Accordion>
 </div>
     </section>
-     
+     </div>
         <!--==============================  QUIENES SOMOS================================-->
     <%--<section id="content"><div class="ic"></div>
         <div class="auto-style2">

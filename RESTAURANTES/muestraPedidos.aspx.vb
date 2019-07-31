@@ -56,7 +56,7 @@ Partial Class muestraPedidos
                     ratingControl = CType((gvrow.FindControl("Rating1")), Rating)
                     Dim rowIndex As Integer = gvrow.RowIndex
                     Dim idOrden As Integer = Convert.ToInt32(gridPedidos.DataKeys(rowIndex).Value)
-                    Dim idPlato = gvrow.Cells(1).Text
+                    Dim idPlato = gvrow.Cells(0).Text
                     Dim user = Usuario
                     rating = ratingControl.CurrentRating
                     strSQL = "INSERT INTO tbm_PedidosClientes(IdOrden, IdPlato, IdEmpleado, Rating) VALUES(" & idOrden & "," & idPlato & "," & user & "," & rating & ")"
