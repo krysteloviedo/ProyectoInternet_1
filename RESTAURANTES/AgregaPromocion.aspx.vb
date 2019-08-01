@@ -34,7 +34,7 @@ Partial Class AgregaPromocion
             Dim count As Integer = 0
             con = New SqlConnection(CStr(Session("sessStrCon")))
             con.Open()
-            strSQL = "INSERT INTO tbm_Promociones(Nombre, Fecha_desde, Fecha_hasta, iva, imagen) VALUES ('" & nombre & "','" & fechaDesde & "','" & fechaHasta & "','" & iva & "','" & imagenFile & "')"
+            strSQL = "INSERT INTO tbm_Promociones(Nombre, Fecha_desde, Fecha_hasta, iva, imagen) VALUES ('" & nombre & "','" & Convert.ToDateTime(fechaDesde).ToString("yyyyMMdd") & "','" & Convert.ToDateTime(fechaHasta).ToString("yyyyMMdd") & "','" & iva & "','" & imagenFile & "')"
             Dim insert As New SqlCommand(strSQL, con)
             count = insert.ExecuteNonQuery()
             If count > 0 Then
